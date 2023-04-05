@@ -1,44 +1,82 @@
 [
     {
-        "id": "1",
+        "id": 0,
+        "isQuestion": true,
         "question": "問題1",
-        "options": [
-            "11",
-            "12",
-            "13"
-        ],
+        "options": ["A.病苦。","B.情苦。","C.窮苦。","D.不苦。"],
         "answers": [
-            "2",
-            "a2",
-            "a3"
-        ]
+            4,
+            2,
+            1,
+            0
+        ],
+        "answer": null,
+        "next": null
     },
     {
-        "id": "2",
+        "id": 1,
+        "isQuestion": true,
         "question": "問題2",
         "options": [
             "11",
-            "12",
-            "13"
+            "22",
+            "33",
+            "44"
         ],
         "answers": [
-            "11",
-            "12",
-            "13"
-        ]
+            1,
+            2,
+            3,
+            1
+        ],
+        "answer": null,
+        "next": null
     },
     {
-        "id": "3",
+        "id": 2,
+        "isQuestion": true,
         "question": "問題3",
         "options": [
             "11",
-            "12",
-            "13"
+            "22",
+            "33",
+            "44"
         ],
         "answers": [
+            1,
+            2,
+            3,
+            2
+        ],
+        "answer": null,
+        "next": null
+    },
+    {
+        "id": 3,
+        "isQuestion": true,
+        "question": "問題4",
+        "options": [
             "11",
-            "12",
-            "13"
-        ]
+            "22",
+            "33",
+            "44"
+        ],
+        "answers": [
+            1,
+            2,
+            3,
+            3
+        ],
+        "answer": null,
+        "next": null
+    },
+    {
+        "id": 4,
+        "isQuestion": false,
+        "question": "答案1",
+        "answers": null,
+        "options": null,
+        "answer": "answer",
+        "next": 1
     }
 ]

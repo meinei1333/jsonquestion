@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./App.css";
 
 import questionsData from "./question.json";
-import { log } from "console";
 
 interface Question {
-  id: string;
+  id: number;
+  isQuestion: boolean;
   question: string;
-  options: string[];
-  answers: string[];
+  answers: number[] | null | undefined;
+  options: string[] | null | undefined;
+  answer: string | null | undefined;
+  next: number | null | undefined;
 }
 
 function App() {
@@ -23,21 +27,31 @@ function App() {
     setQuestions(questionsData[ansID]);
   }, []);
 
-  return (
-    <div className="App">
-      <h1>Questions</h1>
-      <div key={questions?.id}>
-        <h2>{questions?.question}</h2>
-        <ul>
-          {questions?.options.map((option, index) => (
-            <li key={option}>
-              <a href={`http://localhost:3000/?questionID=${questions?.answers[index]}`}>{option}</a>
-            </li>
-          ))}
-        </ul>
+  if (questions?.isQuestion) {
+    return (
+      <div className="App">
+        <h1>心理測驗：歡迎來到輪迴小遊戲！</h1>
+        <div key={questions?.id}>
+          <h2>{questions?.question}</h2>
+          <ul>
+            {questions?.options && questions?.options.map((option, index) => (
+              <li key={option}>
+                {questions?.answers && <a href={`?questionID=${questions?.answers[index]}`}>{option}</a>}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="App">+1
+        <h1>心理測驗：歡迎來到輪迴小遊戲！</h1>
+        <h2>{questions?.answer}</h2>
+        {questions?.answer && <a href={`?questionID=${questions?.next}`}>{`請回到第${questions?.next && questions?.next + 1}題`}</a>}
+      </div>
+    );
+  }
 }
 
 export default App;
