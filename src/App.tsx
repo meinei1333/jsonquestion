@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./App.css";
 
@@ -18,12 +17,10 @@ interface Question {
 function App() {
 
   const [questions, setQuestions] = useState<Question>();
-  const [questionID, setQuestionID] = useState<number>(0);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const ansID = Number(params.get("questionID"));
-    setQuestionID(Number(params.get("questionID")));
     setQuestions(questionsData[ansID]);
   }, []);
 
