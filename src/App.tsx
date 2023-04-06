@@ -9,10 +9,10 @@ interface Question {
   id: number;
   isQuestion: boolean;
   question: string;
-  answers: number[] | null | undefined;
-  options: string[] | null | undefined;
-  answer: string | null | undefined;
-  next: number | null | undefined;
+  answers?: number[];
+  options?: string[];
+  answer?: string;
+  next?: number;
 }
 
 function App() {
