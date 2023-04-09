@@ -47,7 +47,7 @@ function App() {
       <div className="App">
         <div className="app-container">
           <h1>攝影小問題</h1>
-          <a href={questions?.url} target="_blank">{questions?.answer}</a>
+          <a href={questions?.url}>{questions?.answer}</a>
         </div>
       </div>
     );
