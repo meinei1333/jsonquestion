@@ -11,7 +11,7 @@ interface Question {
   answers?: number[];
   options?: string[];
   answer?: string;
-  next?: number;
+  url?: string;
 }
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
     return (
       <div className="App">
         <div className="app-container">
-          <h1>心理測驗：歡迎來到輪迴小遊戲！</h1>
+          <h1>攝影小問題</h1>
           <div key={questions?.id}>
             <h2>{questions?.question}</h2>
             <ul>
@@ -46,9 +46,8 @@ function App() {
     return (
       <div className="App">
         <div className="app-container">
-          <h1>心理測驗：歡迎來到輪迴小遊戲！</h1>
-          <h2>{questions?.answer}</h2>
-          {questions?.answer && <a href={`?questionID=${questions?.next}`}>{`請回到第${questions?.next && questions?.next + 1}題`}</a>}
+          <h1>攝影小問題</h1>
+          <a href={questions?.url} target="_blank">{questions?.answer}</a>
         </div>
       </div>
     );
